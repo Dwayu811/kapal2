@@ -1,0 +1,24 @@
+body {
+    height: 100vh;
+    margin: 0;
+    /* Menyembunyikan kursor default untuk pengalaman yang lebih bersih (opsional) */
+    /* cursor: none; */
+}
+
+.cursor-box {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    background-image: url("https://pin.it/https://i.pinimg.com/1200x/c8/f8/1d/c8f81d6af0731a55056dcc21de620599.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: fixed; /* Posisi relatif terhadap viewport browser */
+    pointer-events: none; /* Memastikan kotak tidak menghalangi event kursor pada elemen lain */
+    transform: translate(-50%, -50%); /* Menengahkan kotak tepat di ujung kursor */
+    transition: transform 0.1s ease-out; /* Menambahkan sedikit transisi halus */
+    z-index: 1000; /* Memastikan kotak selalu di atas */
+}
+
+
