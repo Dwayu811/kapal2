@@ -5,20 +5,51 @@ body {
     /* cursor: none; */
 }
 
-.cursor-box {
-    width: 100px;
-    height: 100px;
-    background: blue;
-    background-image: url("https://pin.it/https://i.pinimg.com/1200x/c8/f8/1d/c8f81d6af0731a55056dcc21de620599.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+#cursor-img {
+    width: 80px;
+    top: 0;
+    left: 0;
     position: fixed; /* Posisi relatif terhadap viewport browser */
     pointer-events: none; /* Memastikan kotak tidak menghalangi event kursor pada elemen lain */
     transform: translate(-50%, -50%); /* Menengahkan kotak tepat di ujung kursor */
-    transition: transform 0.1s ease-out; /* Menambahkan sedikit transisi halus */
+    transition: transform 0.05s linear; /* Menambahkan sedikit transisi halus */
     z-index: 1000; /* Memastikan kotak selalu di atas */
 }
+
+#game-area {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.bomb {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.explosion {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: orange;
+  border-radius: 50%;
+  animation: boom 0.3s ease-out forwards;
+}
+
+@keyframes boom {
+  from {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 
 
